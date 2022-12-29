@@ -42,10 +42,18 @@ public class C02_ReusableMethod {
    public void selectFromDropdown(){
 
     selectFromDropdown(driver.findElement(By.id("year")),"2005");
-
+    selectFromDropdown(driver.findElement(By.id("month")),"November");
+    selectFromDropdown(driver.findElement(By.id("day")),"10");
 
 
    }
+    @Test
+    public void selectFromDropdown2(){
+
+        selectFromDropdown(driver.findElement(By.id("state")),"Texas");
+
+
+    }
 
 
 

@@ -90,9 +90,8 @@ public class TestCase1 {
     }
 
     @Test
-    public void test09() {
+    public void test09() throws InterruptedException {
 
-        driver.navigate().refresh();
     driver.findElement(By.cssSelector("a[data-qa='continue-button']")).click();
 
     }
