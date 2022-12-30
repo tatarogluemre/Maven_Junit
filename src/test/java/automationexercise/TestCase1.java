@@ -22,6 +22,12 @@ public class TestCase1 {
       driver.get("https://automationexercise.com/");
     }
 
+    @AfterClass
+    public static void afterClass() throws InterruptedException {
+        Thread.sleep(4000);
+        driver.close();
+
+    }
 
     @Test
 
@@ -50,9 +56,6 @@ public class TestCase1 {
 
         WebElement input =driver.findElement(By.cssSelector("input[data-qa='signup-name']"));
         input.sendKeys("Emre", Keys.TAB,"tatar@gmail.com",Keys.TAB,Keys.ENTER);
-
-
-
     }
 
     @Test

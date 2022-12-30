@@ -6,20 +6,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.Set;
 
 public abstract class TestBase {
 
     protected static WebDriver driver;
 
     @Before
-    public void setUp()  {
+    public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @After
-    public void tearDown()  {
+    public void tearDown() {
         driver.close();
     }
+
+
+    //    MULTIPLE WINDOW
+    public static void switchToWindow(String targetTitle) {
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(targetTitle)) {
+                return;
+            }
+        }
+        driver.switchTo().window(origin);
+    }
+
 }
