@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public abstract class TestBase {
@@ -21,7 +23,7 @@ public abstract class TestBase {
 
     @After
     public void tearDown() {
-        driver.close();
+        driver.quit();
     }
 
 
@@ -30,11 +32,20 @@ public abstract class TestBase {
         String origin = driver.getWindowHandle();
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
-            if (driver.getTitle().equals(targetTitle)) {
+            if (driver.getTitle().contains(targetTitle)) {
                 return;
             }
         }
         driver.switchTo().window(origin);
+    }
+
+    public static void switchWindowListMethod(int windowNumber){
+        try{
+            List<String> handles = new ArrayList<String>(driver.getWindowHandles());
+            driver.switchTo().window(handles.get(windowNumber-1));
+    }catch (IndexOutOfBoundsException e){
+            System.out.println("Bu pencere bulunamadı");
+        }
     }
 
 }

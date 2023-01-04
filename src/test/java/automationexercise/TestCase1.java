@@ -9,6 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class TestCase1 {
     static WebDriver driver;
@@ -56,7 +59,7 @@ public class TestCase1 {
 
         WebElement input =driver.findElement(By.cssSelector("input[data-qa='signup-name']"));
         input.sendKeys("Emre", Keys.TAB,"tatar@gmail.com",Keys.TAB,Keys.ENTER);
-    }
+      }
 
     @Test
     public void test05() {
@@ -67,6 +70,7 @@ public class TestCase1 {
 
     @Test
     public void test06() {
+
        WebElement rd1= driver.findElement(By.id("id_gender1"));
        rd1.click();
        rd1.sendKeys(Keys.TAB,Keys.TAB,"12345",Keys.TAB,"7",Keys.TAB,"July",Keys.TAB,"1987",
