@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class C01WindowHandle extends TestBase {
     /*
-    Bazen bir butona tıkladığımızda, başkabir sekmede(tab) yeni bir pencereaçılır.
+    Bazen bir butona tıkladığımızda, başkabir sekmede(tab) yeni bir pencer eaçılır.
 ●Birden fazla pencereyle calişirken driver’a pencereler arasında gecis yaptirmamizgerekir.
 ●Pencereler arasında gecis yapmak icin windowhandle degerini kullaniriz.
 ●window handle : Selenium WebDriver’in, WebDriver objesi başlatıldığında her pencereye verdigi
@@ -48,8 +48,8 @@ driver.switchTo().newWindow(WindowType.WINDOW);
         Thread.sleep(3000);
 
 //        Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-        //Bu noktada 2 pencere açık ve ikincisine geçiş yapmak istiyoruz
-        //Bunun için tüm pencerelerin id lerini  driver.getWindowHandles() kullanarak alacağız.
+           //Bu noktada 2 pencere açık ve ikincisine geçiş yapmak istiyoruz
+           //Bunun için tüm pencerelerin id lerini  driver.getWindowHandles() kullanarak alacağız.
 
            Set<String> handles = driver.getWindowHandles();
            handles.stream().forEach(t-> System.out.println(t)); //sadece id leri yazırmak için lamda

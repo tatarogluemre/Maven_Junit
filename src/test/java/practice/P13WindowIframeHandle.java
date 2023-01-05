@@ -37,13 +37,13 @@ public class P13WindowIframeHandle extends TestBase {
         // Source labs linkine tıklayın
         sourceLabsLink.click();
         // Açılan sayfada sayfa başlığını yazdırınız
-       switchWindowListMethod(3);
+       switchToWindow(3);
         // ilk sekmeye geri dönelim ve url'ini yazdıralım
-        switchWindowListMethod(1);
+        switchToWindow(1);
         // ilk sekmeyi kapatalım
         driver.close();
         //ikinci pencereye geçiş yapalım
-        switchWindowListMethod(2);
+        switchToWindow(2);
         Thread.sleep(3000);
     }
 }

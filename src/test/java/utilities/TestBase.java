@@ -23,9 +23,9 @@ public abstract class TestBase {
 
     @After
     public void tearDown() {
+
         driver.quit();
     }
-
 
     //    MULTIPLE WINDOW
     public static void switchToWindow(String targetTitle) {
@@ -39,7 +39,7 @@ public abstract class TestBase {
         driver.switchTo().window(origin);
     }
 
-    public static void switchWindowListMethod(int windowNumber){
+    public static void switchToWindow(int windowNumber){
         try{
             List<String> handles = new ArrayList<String>(driver.getWindowHandles());
             driver.switchTo().window(handles.get(windowNumber-1));
@@ -47,5 +47,15 @@ public abstract class TestBase {
             System.out.println("Bu pencere bulunamadı");
         }
     }
+    public static void wait(int seconds){
+
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 }
