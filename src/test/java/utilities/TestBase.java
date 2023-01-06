@@ -23,7 +23,7 @@ public abstract class TestBase {
 
     @After
     public void tearDown() {
-
+        wait(3);
         driver.quit();
     }
 
