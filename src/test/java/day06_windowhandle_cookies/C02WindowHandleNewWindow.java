@@ -23,7 +23,7 @@ public class C02WindowHandleNewWindow extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("LinkedIn"));
         //Techpro Education penceresine dönelim
         switchToWindow(1);
-        wait(2);
+        waitFor(2);
 
     }
 }

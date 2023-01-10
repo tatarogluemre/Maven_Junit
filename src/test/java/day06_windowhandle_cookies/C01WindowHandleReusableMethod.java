@@ -21,7 +21,7 @@ public class C01WindowHandleReusableMethod extends TestBase {
         Assert.assertEquals(driver.getTitle(),"The Internet");
 //        Click Here butonuna basın.
         driver.findElement(By.linkText("Click Here")).click();
-        wait(3);
+        waitFor(3);
         //İkinci pencere açılır ve ikinci pencerede işlem yapmak istediğimden o pencereye switch geçiş yapmalıyız.
             switchToWindow(2);
 

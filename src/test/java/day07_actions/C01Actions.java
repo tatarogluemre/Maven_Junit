@@ -16,7 +16,7 @@ public class C01Actions extends TestBase {
         WebElement kutu = driver.findElement(By.xpath("//div[@id='hot-spot']"));
         Actions actions = new Actions(driver);
         actions.contextClick(kutu).perform();//Tüm actionslar actions ile başlar perform() ile biter.
-        wait(2);
+        waitFor(2);
 //        Alert’te cikan yazinin “You selected a context menu” oldugunu test edin
         String actualText= driver.switchTo().alert().getText();
         String expectedText = "You selected a context menu";

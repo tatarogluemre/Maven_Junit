@@ -17,7 +17,7 @@ public class C04_FilesDownloadTest extends TestBase {
         driver.get("https://testcenter.techproeducation.com/index.php?page=file-download");
 //        b10 all test cases dosyasını indirelim
          driver.findElement(By.partialLinkText("b10 all test cases")).click();
-         wait(3);
+         waitFor(3);
 //        Dosyanın başarıyla indirilip indirilmediğini test edelim
         String filePath = System.getProperty("user.home")+"\\Downloads\\b10 all test cases, code.docx";
         boolean isFileDownload = Files.exists(Paths.get(filePath));

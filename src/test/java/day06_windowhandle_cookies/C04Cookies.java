@@ -30,7 +30,7 @@ public class C04Cookies extends TestBase {
 //        4. Yeni bir cookie ekle
             Cookie favoriCookie = new Cookie("cikolatam","antepfistik");
             driver.manage().addCookie(favoriCookie);
-            wait(3);
+            waitFor(3);
         System.out.println(driver.manage().getCookieNamed("cikolatam"));
 //        5. Bir Cookie yi ismiyle sil
         driver.manage().deleteCookieNamed("csm-hit");

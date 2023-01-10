@@ -9,6 +9,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HW03   extends TestBase {
@@ -53,6 +54,10 @@ public class HW03   extends TestBase {
 //    sonuç yazsının puset içerdiğini test edin
         String actualText2 = driver.findElement(By.xpath("(//div[@class='sg-col-inner'])[1]")).getText();
         Assert.assertTrue(actualText2.contains("puset"));
+        List<String> windows = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(windows.get(0));
+        waitFor(3);
+        driver.switchTo().window(windows.get(1));
 //    üçüncü ürüne relative locater kullanarak tıklayin
 
 //    title ve fiyat bilgilerini assign edelim ve ürünü sepete ekleyin
