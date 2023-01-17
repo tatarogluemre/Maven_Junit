@@ -1,5 +1,6 @@
 package day12webtables;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -62,6 +63,8 @@ public class C01WebTables extends TestBase {
        List<WebElement>sonSutun= driver.findElements(By.xpath("//table[@id='table1']//tbody//tr//td[5]"));
        sonSutun.forEach(t-> System.out.println(t.getText()));
         System.out.println(driver.findElement(By.xpath("//table[@id='table1']//tr[" + 2 + "]//td[" + 3 + "]")).getText());
+
+
     }
 
     public void rowColumnMethod(int row, int column){
@@ -74,6 +77,7 @@ public class C01WebTables extends TestBase {
 
     @Test
     public void task05() {
-       rowColumnMethod(2,3);
+
+        rowColumnMethod(2,3);
     }
 }
