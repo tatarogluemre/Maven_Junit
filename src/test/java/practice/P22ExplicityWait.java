@@ -8,7 +8,7 @@ import utilities.TestBase;
 
 import java.time.Duration;
 
-public class ExplicityWait extends TestBase {
+public class P22ExplicityWait extends TestBase {
     /*
                                     - Explicit Wait -
         Selenium’da Explicit Wait, Web Sürücüsüne belirli koşulları (Expected Condition) veya

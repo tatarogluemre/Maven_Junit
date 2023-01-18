@@ -8,6 +8,8 @@ import utilities.TestBase;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class C02_GetScreenShot_FullScreen extends TestBase {
     /*
@@ -29,7 +31,7 @@ public class C02_GetScreenShot_FullScreen extends TestBase {
         File goruntu = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         //2-Almış olduğumuz ekran görüntüsünü belirlediğimiz dosyaya belirlediğimiz dinamik isim ile kaydet.
-        String currentDate = new java.text.SimpleDateFormat("yyyy-MM-dd-ss").format(new java.util.Date());
+        String currentDate = new SimpleDateFormat("yyyy-MM-dd-ss").format(new Date());
         String path = System.getProperty("user.dir")+"/test-output/EkranAlintilari/"+currentDate+"image.png";
         File hedef = new File(path);
         //3-Görüntü ile dosyayı birleştirip kaydedeceğiz
