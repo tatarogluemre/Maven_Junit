@@ -210,4 +210,37 @@ public abstract class TestBase {
 
 
     }
+
+    //Scrool intoview Js methodu (JavascriptExecotor) ile istenen web elemnte scroll
+    public void scrollIntoViewJs(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
+
+    }
+
+    //Scroll ile sayfanın en altına in
+    public void scrollEndOfPageJs(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+    }
+
+    //Scroll ile sayfanın en üstüne çık
+    public void scrollTopOfPageJs(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight);");
+    }
+
+    //Belirli bir elemente JavaScriptExecutor ile tıklama
+    public void clickByJs(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",element);
+    }
+
+    //Belirli bir input box'a JavaScriptExecutor value değeri ile veri girme
+    //Bu method sendKeys metotuna bir alternatifdir. sendKeys tercihen kullanılır çalışmadığı zaman bu kullanılabilir.
+    public void typeWithJs(WebElement element,String text){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
+    }
+
 }
