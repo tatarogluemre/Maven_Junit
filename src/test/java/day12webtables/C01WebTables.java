@@ -1,6 +1,8 @@
 package day12webtables;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,7 +24,7 @@ public class C01WebTables extends TestBase {
 //        Parameter 2 = column numarasi
 //        printData(2,3);  => 2nd row, 3rd column daki datayı print etsin
 
-
+private Logger logger = LogManager.getLogger(C01WebTables.class.getName());
     @Before
     public void beforeClass() throws Exception {
         driver.get("https://the-internet.herokuapp.com/tables");
@@ -33,8 +35,9 @@ public class C01WebTables extends TestBase {
     public void task01() {
 
         String table1 = driver.findElement(By.xpath("//table[@id='table1']")).getText();
-        System.out.println("TABLE1 VERİLERİ");
-        System.out.println(table1);
+  //      System.out.println("TABLE1 VERİLERİ");
+        logger.info("Table1 Verileri");
+       System.out.println(table1);
         System.out.println("2.Yol");
         List<WebElement> tableData = driver.findElements(By.xpath("//table[@id='table1']//td"));
         tableData.forEach(t-> System.out.println(t.getText()));

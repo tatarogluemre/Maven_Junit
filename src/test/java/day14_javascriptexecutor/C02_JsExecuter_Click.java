@@ -18,5 +18,6 @@ public class C02_JsExecuter_Click extends TestBase {
         String expectedurl = "https://lms.techproeducation.com/";
         Assert.assertEquals(expectedurl,actualurl);
 
+
     }
 }
